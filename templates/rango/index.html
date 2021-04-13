@@ -10,15 +10,44 @@
 </head>
 
 <body>
-    <h1>Rango says...</h1>
+<h1>Rango says...</h1>
     <div>
-        ...hey there partner! <br />
-        <strong>{{ boldmessage }}</strong><br />
+        ...hey there partner! <br/>
+    </div>
+
+    <h3>Most Liked Categories</h3>
+    <div>
+        {% if categories_like %}
+        <ul>
+            {% for category in categories_like %}
+            <li>
+                <a href="/rango/category/{{ category.slug }}">{{ category.name }}</a> {{ category.likes }}
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <strong>There are no categories present.</strong>
+        {% endif %}
+    </div>
+
+    <h3>Most Viewed Categories</h3>
+    <div>
+        {% if categories_view %}
+        <ul>
+            {% for category in categories_view %}
+            <li>
+                <a href="/rango/category/{{ category.slug }}">{{ category.name }}</a> {{ category.views }}
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <strong>There are no categories present.</strong>
+        {% endif %}
     </div>
 
     <div>
-        <a href="/rango/about/">About Rango</a><br />
-        <img src="{% static 'images/wp.jpeg' %}" alt="Picture of Rango" /> <!-- New line -->
+        <a href="/rango/about/">About Rango</a><br/>
+        <img src="{% static 'images/wp.jpeg' %}" alt="Picture of Rango"/> <!-- New line -->
     </div>
 
 </body>
