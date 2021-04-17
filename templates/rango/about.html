@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-
+{% extends 'rango/base.html' %}
 {% load staticfiles %}
-<!-- New line -->
 
-<html>
+{% block title_block %}
+    About
+{% endblock %}
 
-<head>
-    <title>Rango</title>
-</head>
-
-<body>
+{% block body_block %}
     <h1>Rango says...</h1>
     <div>
         ...hey there partner! <br />
@@ -17,9 +13,7 @@
     </div>
 
     <div>
-        <img src="{{ MEDIA_URL }}python.png" alt="Picture of Rango" /> <!-- New line -->
+        <img src="{{ MEDIA_URL }}python.png" alt="Picture of Rango" /> <br/>
+        <img src="{% static 'images/wp.jpeg' %}" alt="Picture of Rango"/>
     </div>
-
-</body>
-
-</html>
+{% endblock %}
