@@ -18,9 +18,9 @@
             {% get_category_list category %}
         {% endblock %}
     </div>
-    <div>
+<!--    <div>
         {% get_super_title category %}
-    </div>
+    </div>-->
 
     <div>
         {% block body_block %}
@@ -31,6 +31,7 @@
             <li><a href="{% url 'rango_app:add_category' %}">Add a New Category</a></li>
             <li><a href="{% url 'rango_app:about' %}">About</a></li>
             <li><a href="{% url 'rango_app:index' %}">Index</a></li>
+            <li><a href="{% url 'rango_app:register' %}">Sign Up</a></li>
             <li><a href="/admin/">Admin Page</a></li>
             <li><a href="/">Main Page</a></li>
         </ul>
